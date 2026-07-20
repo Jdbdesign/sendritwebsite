@@ -228,7 +228,7 @@ export default function ProcessAccordion() {
           </h2>
         </Reveal>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "center" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "start" }}>
           <div
             style={{
               position: "relative",
@@ -283,14 +283,15 @@ export default function ProcessAccordion() {
                   </div>
                   <div
                     style={{
-                      overflow: "hidden",
-                      transition: "max-height .4s cubic-bezier(.16,1,.3,1), opacity .35s ease, margin-top .35s ease",
-                      maxHeight: on ? 180 : 0,
+                      display: "grid",
+                      gridTemplateRows: on ? "1fr" : "0fr",
                       opacity: on ? 1 : 0,
-                      marginTop: on ? 14 : 0,
+                      transition: "grid-template-rows .45s cubic-bezier(.4,0,.2,1), opacity .3s ease",
                     }}
                   >
-                    <p style={{ margin: 0, fontSize: 15, lineHeight: 1.6, color: "#A9A4B8", paddingLeft: 36 }}>{step.body}</p>
+                    <div style={{ overflow: "hidden", minHeight: 0 }}>
+                      <p style={{ margin: 0, paddingTop: 14, fontSize: 15, lineHeight: 1.6, color: "#A9A4B8", paddingLeft: 36 }}>{step.body}</p>
+                    </div>
                   </div>
                 </div>
               );
