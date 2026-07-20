@@ -59,7 +59,7 @@ export default function Hero() {
             animation: "fadeUp .7s cubic-bezier(.16,1,.3,1) 0.15s both",
           }}
         >
-          Bulk email that
+          Smarter Bulk Email
           <br />
           <span
             style={{
@@ -69,7 +69,7 @@ export default function Hero() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            cuts through the noise.
+            for Modern Businesses
           </span>
         </h1>
         <p
