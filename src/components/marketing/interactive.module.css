@@ -1,0 +1,57 @@
+/* Shared hover interactions, replacing the source's `style-hover` attribute hack with real CSS. */
+
+.primaryButton {
+  transition:
+    box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.primaryButton:hover {
+  box-shadow: var(--hover-shadow, 0 14px 46px rgba(108, 43, 223, 0.75));
+  transform: translateY(-1px);
+}
+
+.ghostButton {
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.ghostButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--hover-border, rgba(255, 255, 255, 0.22));
+}
+
+.liftCard {
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s;
+}
+.liftCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--hover-border, rgba(139, 92, 246, 0.3));
+}
+
+.dimLabel {
+  transition: color 0.25s;
+}
+.dimLabel:hover {
+  color: var(--hover-color, #c4b5fd);
+}
+
+.roundIconButton {
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.roundIconButton:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.planButton {
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.planButton:hover {
+  transform: translateY(-1px);
+}
