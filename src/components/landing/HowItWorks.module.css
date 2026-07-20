@@ -1,0 +1,134 @@
+.trackWrap {
+  position: relative;
+}
+
+.iconWrap {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+}
+
+.glowLayer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 130px;
+  height: 130px;
+  transform: translate(-50%, -50%) scale(0.85);
+  border-radius: 50%;
+  filter: blur(18px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  will-change: opacity, transform;
+}
+
+.ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ring.play {
+  animation: ripple 650ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes ripple {
+  from {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.45);
+  }
+}
+
+.circle {
+  position: relative;
+  z-index: 2;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.chevron {
+  align-self: flex-start;
+  margin-top: 38px;
+  color: #4a4560;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  will-change: opacity, filter;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  transform-origin: center;
+  will-change: transform, filter;
+}
+
+.signal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.signalHalo {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  margin-left: -13px;
+  margin-top: -13px;
+  border-radius: 50%;
+  filter: blur(6px);
+}
+
+.signalCore {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  margin-left: -4.5px;
+  margin-top: -4.5px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px currentColor;
+}
+
+.signalTrail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 130px;
+  margin-top: -1.5px;
+  border-radius: 999px;
+  filter: blur(1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signal,
+  .ring {
+    display: none;
+  }
+}
